@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <!-- Esta línea asegura que se vea perfecto en celular -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Leane & Lau | Matanzas ✨</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Iconos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Fuentes -->
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Fondo Decorativo -->
+    <div class="bg-shape shape-1"></div>
+    <div class="bg-shape shape-2"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand fixed-top py-2 shadow-sm">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <!-- Logo un poco más grande como pediste -->
+                <img src="imagenes/Logo.jpeg" alt="Logo Leane & Lau" class="logo-circle">
+                <div class="d-flex flex-column">
+                    <span class="brand-script text-pink" style="font-size: 1.7rem;">Leane & Lau</span>
+                    <span class="text-muted small text-uppercase" style="font-size: 0.6rem; letter-spacing: 1px;">Store Matanzas</span>
+                </div>
+            </a>
+            
+            <button class="btn btn-icon position-relative click-effect" type="button" data-bs-toggle="offcanvas" data-bs-target="#carritoSidebar">
+                <i class="bi bi-handbag-fill fs-3 text-dark"></i>
+                <span id="badge-carrito" class="position-absolute top-0 start-100 translate-middle badge rounded-circle bg-pink border border-white d-none">
+                    0
+                </span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Cinta Informativa (Matanzas) -->
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <span>🛵 Envíos en todo Matanzas</span> • <span>🌸 Belleza & Accesorios</span> • <span>✨ Novedades Virales</span> • <span>🛵 Envíos en todo Matanzas</span> • <span>🌸 Belleza & Accesorios</span>
+        </div>
+    </div>
+
+    <!-- PORTADA (Nueva Frase) -->
+    <header class="hero-section d-flex align-items-center">
+        <div class="container position-relative z-2">
+            <div class="row align-items-center">
+                <!-- Texto -->
+                <div class="col-lg-6 text-center text-lg-start mb-4 mb-lg-0">
+                    <span class="badge bg-pink px-3 py-2 rounded-pill mb-3 shadow-sm animate-up">💖 Tu tienda favorita</span>
+                    <h1 class="display-4 fw-bold text-dark mb-3 animate-up delay-1">
+                        No dejes para mañana <br> <span class="text-pink-gradient font-script">lo que puedas comprar hoy</span>
+                    </h1>
+                    <p class="lead text-muted mb-4 animate-up delay-2 fs-6">
+                        Lo último en maquillaje, skincare y accesorios virales llega a Matanzas. ¡Date el gusto que mereces!
+                    </p>
+                    <div class="d-flex gap-2 justify-content-center justify-content-lg-start animate-up delay-3">
+                        <a href="#catalogo" class="btn btn-chic shadow click-effect">Ver Productos 💕</a>
+                    </div>
+                </div>
+                
+                <!-- Imagen Portada (Usamos el Gloss Hello Kitty que es llamativo o el Logo) -->
+                <div class="col-lg-6 animate-up delay-2 text-center">
+                    <div class="hero-img-wrapper">
+                        <!-- Puedes poner aquí una foto tuya o de productos destacados -->
+                        <img src="imagenes/Logo.jpeg" alt="Leane & Lau" class="img-fluid rounded-circle shadow-lg hero-main-img border-pink">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- CATÁLOGO -->
+    <div id="catalogo" class="container mb-5 pt-2">
+        <div class="text-center mb-4">
+            <h3 class="fw-bold">Explora la Tienda</h3>
+            
+            <!-- Filtros (Nuevas Categorías) -->
+            <div class="d-flex justify-content-start justify-content-lg-center gap-2 mt-3 pb-2 overflow-auto custom-scroll px-2">
+                <button class="btn btn-filter active click-effect" onclick="filtrarProductos('todos', this)">Todo</button>
+                <button class="btn btn-filter click-effect" onclick="filtrarProductos('maquillaje', this)">Maquillaje 💄</button>
+                <button class="btn btn-filter click-effect" onclick="filtrarProductos('skincare', this)">Skincare 🧖‍♀️</button>
+                <button class="btn btn-filter click-effect" onclick="filtrarProductos('accesorios', this)">Accesorios 🧸</button>
+            </div>
+        </div>
+
+        <!-- Grid Productos -->
+        <div id="productos-container" class="row g-3 px-1">
+            <!-- JS llenará esto -->
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-white py-5 border-top text-center pb-5 mb-4">
+        <div class="container">
+            <h2 class="font-script text-pink mb-3">Leane & Lau</h2>
+            <p class="text-muted mb-4">Matanzas, Cuba 📍</p>
+            
+            <a href="https://wa.me/5354385622" target="_blank" class="btn btn-social click-effect mx-auto">
+                <i class="bi bi-whatsapp fs-3"></i>
+            </a>
+            
+            <p class="small text-muted mt-4">© 2025 Leane & Lau Store</p>
+        </div>
+    </footer>
+
+    <!-- SIDEBAR CARRITO -->
+    <div class="offcanvas offcanvas-end rounded-start-4" tabindex="-1" id="carritoSidebar" style="width: 90%; max-width: 400px;">
+        <div class="offcanvas-header border-bottom">
+            <h5 class="offcanvas-title fw-bold">Tu Pedido 🛍️</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body d-flex flex-column">
+            <div id="carrito-items" class="flex-grow-1 overflow-auto"></div>
+            
+            <div class="bg-light p-3 rounded-3 mt-3 shadow-sm">
+                <div class="d-flex justify-content-between mb-3">
+                    <span class="fw-bold">Total:</span>
+                    <span class="fw-bold text-pink fs-4">$<span id="total-precio">0</span></span>
+                </div>
+                <button onclick="enviarPedido()" class="btn btn-chic w-100 py-3 rounded-3 click-effect">
+                    Enviar a WhatsApp <i class="bi bi-whatsapp ms-2"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

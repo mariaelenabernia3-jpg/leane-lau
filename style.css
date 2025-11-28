@@ -1,0 +1,187 @@
+:root {
+    --pink-main: #ff477e;
+    --pink-soft: #fff0f3;
+    --text-dark: #2d2d2d;
+    --font-script: 'Great Vibes', cursive;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    background-color: #fffbfd;
+    padding-top: 75px;
+    overflow-x: hidden;
+}
+
+/* --- FONDO --- */
+.bg-shape {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(90px);
+    z-index: -1;
+    opacity: 0.5;
+}
+.shape-1 { width: 300px; height: 300px; background: #ffc2d1; top: -50px; left: -50px; }
+.shape-2 { width: 300px; height: 300px; background: #ffe5ec; bottom: 0; right: 0; }
+
+/* --- NAVBAR --- */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.logo-circle {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid var(--pink-soft);
+}
+.btn-icon { border: none; background: transparent; padding: 0; }
+
+/* --- MARQUEE --- */
+.marquee-container {
+    background: var(--pink-main);
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 6px 0;
+}
+.marquee-content {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    color: white;
+    font-weight: 600;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+.marquee-content span { margin: 0 15px; }
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* --- HERO SECTION --- */
+.hero-section {
+    padding: 30px 0;
+    text-align: center;
+}
+.hero-main-img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    margin-top: 20px;
+}
+.border-pink { border: 5px solid white; outline: 3px solid var(--pink-soft); }
+
+/* --- BOTONES --- */
+.btn-chic {
+    background-color: var(--pink-main);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: none;
+    transition: 0.2s;
+}
+.click-effect:active { transform: scale(0.95); }
+
+/* --- FILTROS --- */
+.btn-filter {
+    background: white;
+    border: 1px solid #eee;
+    color: #666;
+    border-radius: 20px;
+    padding: 6px 15px;
+    font-size: 0.85rem;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+.btn-filter.active {
+    background-color: var(--pink-main);
+    color: white;
+    border-color: var(--pink-main);
+}
+.custom-scroll::-webkit-scrollbar { height: 0px; background: transparent; }
+
+/* --- PRODUCT CARDS (Móvil Optimizado) --- */
+.card-producto {
+    border: none;
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    overflow: hidden;
+    height: 100%; /* Asegura altura igual */
+}
+
+.img-wrapper {
+    height: 160px; /* Altura ideal para móvil */
+    position: relative;
+    overflow: hidden;
+}
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.price-badge {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: bold;
+    color: var(--pink-main);
+    font-size: 0.85rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.btn-add-circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: var(--pink-soft);
+    color: var(--pink-main);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+/* --- WHATSAPP --- */
+.btn-social {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #25D366;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+}
+
+/* --- PARTÍCULAS --- */
+.particle {
+    position: fixed;
+    pointer-events: none;
+    animation: floatUp 0.8s ease-out forwards;
+    font-size: 1.5rem;
+    z-index: 9999;
+}
+@keyframes floatUp {
+    0% { transform: translate(-50%, -50%) scale(0.5); opacity: 1; }
+    100% { transform: translate(-50%, -150px) scale(1.2); opacity: 0; }
+}
+
+/* --- ANIMACIONES --- */
+.animate-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
+.delay-1 { animation-delay: 0.2s; }
+.delay-2 { animation-delay: 0.4s; }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+.text-pink-gradient {
+    background: linear-gradient(45deg, #ff477e, #ff8fab);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
