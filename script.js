@@ -209,7 +209,7 @@ function enviarPedido() {
     if (ids.length === 0) return alert("Tu bolsita está vacía 🛍️");
 
     // Mensaje personalizado para Leane & Lau
-    let mensaje = `🌸 *HOLA LEANE & LAU!* %0AQuiero hacer este pedido para Matanzas:%0A%0A`;
+    let mensaje = `🌸 *HOLA LEANE y LAU!* %0AQuiero hacer este pedido para Matanzas:%0A%0A`;
     let total = 0;
     ids.forEach(id => {
         const p = productos.find(prod => prod.id == id);
@@ -220,4 +220,5 @@ function enviarPedido() {
     });
     mensaje += `%0A---------------------------%0A💰 *TOTAL: $${total} USD*%0A---------------------------%0A📍 *Dirección de Entrega:* ...`;
     window.open(`https://wa.me/${NUMERO_WHATSAPP}?text=${mensaje}`, '_blank');
+
 }
